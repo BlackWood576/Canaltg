@@ -52,6 +52,7 @@ RSS_FEEDS = [
     # AI / TECHNOLOGY
     "https://techcrunch.com/feed/",
     "https://www.theverge.com/rss/index.xml",
+
 ]
 HISTORY_LIMIT = 300
 TELEGRAM_API = f"https://api.telegram.org/bot{TG_BOT_TOKEN}"
