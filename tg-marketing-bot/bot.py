@@ -40,12 +40,31 @@ PENDING_FILE = "pending.json"      # одобренный, но ещё не оп
 
 # RSS-источники. Можно свободно добавлять/убирать.
 RSS_FEEDS = [
+    # GOOGLE
     "https://blog.google/products/ads-commerce/rss/",
+
+    # TIKTOK
     "https://www.tiktok.com/business/en/blog/rss.xml",
+
+    # PPC / SEARCH
     "https://searchengineland.com/feed",
     "https://www.searchenginejournal.com/feed/",
     "https://www.ppchero.com/feed/",
+
+    # MARKETING / ADTECH
     "https://martech.org/feed/",
+    "https://www.wordstream.com/blog/rss.xml",
+    "https://www.optmyzr.com/blog/feed/",
+    "https://www.supermetrics.com/blog/feed",
+
+    # DIGITAL / GROWTH
+    "https://blog.hubspot.com/marketing/rss.xml",
+    "https://ahrefs.com/blog/feed/",
+    "https://backlinko.com/feed",
+
+    # AI / TECHNOLOGY
+    "https://techcrunch.com/feed/",
+    "https://www.theverge.com/rss/index.xml",
 ]
 
 # Сколько последних тем помнить (чтобы не повторяться)
