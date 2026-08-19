@@ -37,18 +37,18 @@ RSS_FEEDS = [
     "https://searchengineland.com/feed",
     "https://www.searchenginejournal.com/feed/",
     "https://www.ppchero.com/feed/",
-    
+
     # MARKETING / ADTECH
     "https://martech.org/feed/",
     "https://www.wordstream.com/blog/rss.xml",
     "https://www.optmyzr.com/blog/feed/",
     "https://www.supermetrics.com/blog/feed",
-    
+
     # DIGITAL / GROWTH
     "https://blog.hubspot.com/marketing/rss.xml",
     "https://ahrefs.com/blog/feed/",
     "https://backlinko.com/feed",
-    
+
     # AI / TECHNOLOGY
     "https://techcrunch.com/feed/",
     "https://www.theverge.com/rss/index.xml",
