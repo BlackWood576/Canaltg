@@ -618,22 +618,19 @@ def main():
         save_json(HISTORY_FILE, history[-HISTORY_LIMIT:])
         return
 
-    # 4) кладём в pending и шлём тебе черновик на одобрение
-       for c in candidates:
+        for c in candidates:
         if c["title"].lower() in (post["ru"] + post["en"]).lower():
             history.append(c["key"])
     history.append(post["topic_id"])
 
     if publish_to_channel(post):
         print("Опубликовано в канал автоматически.")
-        # копия тебе в личку, чтобы при необходимости удалить пост в канале
         tg_send(TG_ADMIN_ID, "✅ Автопубликация в канал:\n\n" + post["ru"])
     else:
         print("Ошибка публикации — проверь права бота и TG_CHANNEL.")
         tg_send(TG_ADMIN_ID, "⚠️ Не удалось опубликовать автоматически.")
 
     save_json(HISTORY_FILE, history[-HISTORY_LIMIT:])
-
 
 if __name__ == "__main__":
     main()
