@@ -33,7 +33,7 @@ TG_ADMIN_ID    = os.environ["TG_ADMIN_ID"]      # твой личный chat_id 
 TG_CHANNEL     = os.environ["TG_CHANNEL"]       # @имя_канала или -100... id
 
 # Модель Groq. Бесплатный тариф, доступен из региона MD.
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b")
 
 HISTORY_FILE = "history.json"      # список уже использованных тем (хранится в репозитории)
 PENDING_FILE = "pending.json"      # одобренный, но ещё не опубликованный пост
