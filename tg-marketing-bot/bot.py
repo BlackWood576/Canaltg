@@ -619,7 +619,7 @@ def main():
         return
 
         for c in candidates:
-        if c["title"].lower() in (post["ru"] + post["en"]).lower():
+    if c["title"].lower() in (post["ru"] + post["en"]).lower():
             history.append(c["key"])
     history.append(post["topic_id"])
 
