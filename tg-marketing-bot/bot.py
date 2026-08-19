@@ -595,42 +595,38 @@ def process_approvals(history):
 def main():
     history = load_json(HISTORY_FILE, [])
     seen = set(history)
-
-    # 1) сперва разбираем твои одобрения предыдущих черновиков
-    process_approvals(history)
-
-    # 2) собираем свежие темы
+ 
     candidates = collect_candidates(seen)
     if not candidates:
-        print("Свежих тем нет — ничего не генерируем (качество > количество).")
+        print("Свежих тем нет — ничего не публикуем.")
         save_json(HISTORY_FILE, history[-HISTORY_LIMIT:])
         return
-
-    # 3) генерируем пост
+ 
     try:
         post = generate_post(candidates)
     except Exception as e:
-        print(f"[gemini] ошибка генерации: {e}")
+        print(f"[groq] ошибка генерации: {e}")
         return
-
+ 
     if post.get("skip"):
-        print("Модель решила, что публиковать нечего.")
+        print("Модель решила: публиковать нечего.")
         save_json(HISTORY_FILE, history[-HISTORY_LIMIT:])
         return
-
-        for c in candidates:
-    if c["title"].lower() in (post["ru"] + post["en"]).lower():
+ 
+    for c in candidates:
+        if c["title"].lower() in (post["ru"] + post["en"]).lower():
             history.append(c["key"])
     history.append(post["topic_id"])
-
+ 
     if publish_to_channel(post):
         print("Опубликовано в канал автоматически.")
         tg_send(TG_ADMIN_ID, "✅ Автопубликация в канал:\n\n" + post["ru"])
     else:
         print("Ошибка публикации — проверь права бота и TG_CHANNEL.")
         tg_send(TG_ADMIN_ID, "⚠️ Не удалось опубликовать автоматически.")
-
+ 
     save_json(HISTORY_FILE, history[-HISTORY_LIMIT:])
-
+ 
+ 
 if __name__ == "__main__":
     main()
