@@ -462,7 +462,7 @@ def collect_candidates(seen_keys):
 # ---------------------------------------------------------------------------
 def generate_post(candidates):
     lines = []
-      for i, c in enumerate(candidates[:12], 1):
+    for i, c in enumerate(candidates[:12], 1):
         lines.append(f'{i}. "{c["title"]}" — {c["link"]}\n   {c["summary"][:150]}')
     candidates_block = "\n".join(lines)
 
