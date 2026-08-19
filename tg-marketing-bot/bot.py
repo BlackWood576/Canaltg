@@ -21,7 +21,7 @@ TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_ADMIN_ID  = os.environ["TG_ADMIN_ID"]
 TG_CHANNEL   = os.environ["TG_CHANNEL"]
 
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b")
 
 HISTORY_FILE = "history.json"
 PENDING_FILE = "pending.json"
