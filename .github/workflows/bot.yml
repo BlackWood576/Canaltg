@@ -1,0 +1,42 @@
+name: TG content bot
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r tg-marketing-bot/requirements.txt
+
+      - name: Run bot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TG_BOT_TOKEN:   ${{ secrets.TG_BOT_TOKEN }}
+          TG_ADMIN_ID:    ${{ secrets.TG_ADMIN_ID }}
+          TG_CHANNEL:     ${{ secrets.TG_CHANNEL }}
+        working-directory: tg-marketing-bot
+        run: python bot.py
+
+      - name: Commit state
+        run: |
+          git config user.name  "tg-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git commit -m "update state" || echo "nothing to commit"
+          git push || echo "nothing to push"
