@@ -26,7 +26,7 @@ jobs:
 
       - name: Run bot
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY:   ${{ secrets.GROQ_API_KEY }}
           TG_BOT_TOKEN:   ${{ secrets.TG_BOT_TOKEN }}
           TG_ADMIN_ID:    ${{ secrets.TG_ADMIN_ID }}
           TG_CHANNEL:     ${{ secrets.TG_CHANNEL }}
