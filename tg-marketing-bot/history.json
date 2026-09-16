@@ -15,5 +15,6 @@
   "google-ads-daily-pacing-script",
   "google-ads-data-updates",
   "google-bp-view-counts",
-  "local-services-performance-max-migration"
+  "local-services-performance-max-migration",
+  "google-crux-metrics"
 ]
