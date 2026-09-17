@@ -16,5 +16,6 @@
   "google-ads-data-updates",
   "google-bp-view-counts",
   "local-services-performance-max-migration",
-  "google-crux-metrics"
+  "google-crux-metrics",
+  "google-ucp-cart-transfer"
 ]
