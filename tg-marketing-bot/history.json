@@ -18,5 +18,6 @@
   "local-services-performance-max-migration",
   "google-crux-metrics",
   "google-ucp-cart-transfer",
-  "google-shopping-agentic-holiday"
+  "google-shopping-agentic-holiday",
+  "discover-test-topic-overviews"
 ]
