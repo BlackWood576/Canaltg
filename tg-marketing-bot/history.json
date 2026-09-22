@@ -20,5 +20,6 @@
   "google-ucp-cart-transfer",
   "google-shopping-agentic-holiday",
   "discover-test-topic-overviews",
-  "google-eea-local-bus-units"
+  "google-eea-local-bus-units",
+  "ga-include-hostnames"
 ]
